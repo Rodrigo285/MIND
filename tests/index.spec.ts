@@ -1,11 +1,5 @@
-import soma from "../src/index";
+import soma from "../src";
 
-describe("Primeiro teste", () => {
-  test("deve funcionar", () => {
-    expect(true).toBe(true);
-  });
-});
-
-test("deve apresentar o resultado da soma", () => {
-  expect(soma(2, 5)).toEqual(7);
+test("Deve somar dois numeros", () => {
+  expect(soma(4, 5)).toBe(9);
 });
