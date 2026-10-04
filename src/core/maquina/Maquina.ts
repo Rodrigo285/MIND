@@ -1,9 +1,9 @@
-import Erros from "../../constants/Erros";
 import TagMaquina from "../shared/TagMaquina";
+import { TipoMaquina } from "./TipoMaquina";
 
 export interface MaquinaProps {
-  tag: string;
-  tipo: string;
+  tag: TagMaquina;
+  tipo: TipoMaquina;
   marca: string;
   modelo: string;
   fornecedor: string;
@@ -11,16 +11,13 @@ export interface MaquinaProps {
 }
 export default class Maquina {
   readonly tag: TagMaquina;
-  readonly tipo: string;
+  readonly tipo: TipoMaquina;
   readonly marca: string;
   readonly modelo: string;
   readonly fornecedor: string;
   readonly dataFabricacao: Date;
 
   constructor(props: MaquinaProps) {
-    if (props.tag.trim() === "") {
-      throw new Error(Erros.TAG_INVALIDA);
-    }
     this.tag = props.tag;
     this.tipo = props.tipo;
     this.marca = props.marca;

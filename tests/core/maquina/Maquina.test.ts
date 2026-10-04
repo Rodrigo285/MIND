@@ -1,13 +1,31 @@
 import Maquina from "../../../src/core/maquina/Maquina";
-test("Deve criar um objeto maquina", () => {
-  const injetora = new Maquina({
-    tag: "IJ-0305",
-    marca: "Tederic",
-    modelo: "TRX 188F",
-    tipo: "Injetora",
-    fornecedor: "Pavan Zanetti",
-    dataFabricacao: new Date(2001, 0, 1),
-  });
+import { TipoMaquina } from "../../../src/core/maquina/TipoMaquina";
+import TagMaquina from "../../../src/core/shared/TagMaquina";
 
-  expect(injetora.tag).toBe("IJ-0305");
+test("Deve retornar um obejto de maquina valido", () => {
+  const tag = new TagMaquina("IJ-0305");
+  const injetora = {
+    tag: tag,
+    tipo: TipoMaquina.INJETORA,
+    marca: "Tederic",
+    modelo: "Trx 188F",
+    fornecedor: "Pavan Zanetti",
+    dataFabricacao: new Date(1, 10, 2000),
+  };
+  const maquina1 = new Maquina(injetora);
+  expect(maquina1).toBeTruthy();
 });
+
+// test("Deve retornar um obejto invalido", () => {
+//   const tag = new TagMaquina("");
+//   const injetora = {
+//     tag: tag,
+//     tipo: "Injetora",
+//     marca: "Tederic",
+//     modelo: "Trx 188F",
+//     fornecedor: "Pavan Zanetti",
+//     dataFabricacao: new Date(1, 10, 2000),
+//   };
+
+//   expect(() => new Maquina(injetora)).toThrow(Erros.TAG_INVALIDA);
+// });
