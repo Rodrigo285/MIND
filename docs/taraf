@@ -1,0 +1,23 @@
+### CHECKLIST DE DESENVOLVIMENTO — VALUE OBJECT
+
+Para cada novo Value Object criado no domínio:
+
+1. Definir o conceito que o Value Object representa.
+2. Identificar e documentar as regras de negócio desse conceito.
+3. Criar o arquivo do Value Object no contexto ao qual ele pertence.
+4. Implementar o Value Object seguindo as regras definidas.
+5. Garantir que seu valor seja imutável (`readonly` quando aplicável).
+6. Criar os testes unitários correspondentes.
+7. Testar a criação de valores válidos.
+8. Testar os valores inválidos e todas as regras de negócio aplicáveis.
+9. Executar os testes e garantir que todos estejam passando.
+10. Verificar a cobertura de testes.
+11. Revisar as alterações realizadas com `git diff`.
+12. Confirmar o estado do repositório com `git status`.
+13. Criar um commit representando a unidade de trabalho concluída.
+
+**Padrão de commit:**
+
+`feat: adiciona Value Object [Nome] e seus testes`
+
+Após concluir e registrar o commit, iniciar o próximo Value Object ou próxima unidade de desenvolvimento.
